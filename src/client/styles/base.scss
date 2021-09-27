@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 2;
+}
+
+section {
+    max-width: 800px;
+    margin: 50px auto;
+}
+#results{
+    float: left;
+    span{
+        margin:5px;
+        padding:3px;
+        background-color: aqua;
+        display:inline-block;
+    }
+}
