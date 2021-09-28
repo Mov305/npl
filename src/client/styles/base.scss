@@ -13,11 +13,20 @@ section {
     margin: 50px auto;
 }
 #results{
-    float: left;
-    span{
+    div{
         margin:5px;
-        padding:3px;
-        background-color: aqua;
-        display:inline-block;
+        padding: 3px;
+    }
+    
+    #concepts{
+        float: left;
+        
+        span{
+            margin:5px;
+            padding:3px;
+            background-color: aqua;
+            display: inline-block;
+        }
+        
     }
 }

@@ -35,17 +35,22 @@ function handleSubmit(event) {
 
     getData({text:formText})
     .then(res=>{
-        document.getElementById('results').innerHTML=''
-        console.log('from client',res.concept_list);
-        res.concept_list.forEach((i)=>{        
-           const span = document.createElement('span');
-           const con = document.createTextNode(i.form);
-           span.appendChild(con);
-           const results = document.getElementById('results');
-           results.appendChild(span)
+        console.log('from client',res)
+        document.getElementById('a').innerHTML = `Agreement: ${res.agreement}`;
+        document.getElementById('s').innerHTML = `Subjectivity: ${res.subjectivity}`;
+        document.getElementById('c').innerHTML = `Confidence: ${res.confidence}`;
+        document.getElementById('i').innerHTML = `Irony: ${res.irony}`;      
+        document.getElementById('p').innerHTML = `Polarity:${res.score_tag}`;
+        document.getElementById('concepts').innerHTML=''
+        res.sentimented_concept_list.forEach((i)=>{        
+        const span = document.createElement('span');
+        const con = document.createTextNode(i.form);
+        span.appendChild(con);
+        const concepts = document.getElementById('concepts');  
+        concepts.appendChild(span)
 
         })
-    }).catch(err=>{console.log('error');
+    }).catch(err=>{console.log('error',err);
       alert('the Url you have entered might be worng')})
 }
 

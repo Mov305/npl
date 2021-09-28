@@ -31,7 +31,7 @@ app.listen(8081, function () {
 
 app.post('/test', async function (req, res) {
 
-    const api = `https://api.meaningcloud.com/topics-2.0?key=${process.env.API_KEY}&url=${req.body.text}&lang=en&tt=c`
+    const api = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${req.body.text}&lang=en`
     
     const data = await fetch(api)
 
